@@ -1,5 +1,6 @@
-import { useCallback, useMemo } from "react";
-import { IDataRecord } from "../types";
+import React = require('react');
+import { useCallback, useMemo } from 'react';
+import { IDataRecord } from '../types';
 
 interface IProps {
   data: IDataRecord;

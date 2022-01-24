@@ -1,7 +1,8 @@
-import { useCallback, useState } from "react";
-import Row from "../Row";
-import { IDataRecord } from "../types";
-import { getGenerateValue, getInitialValue } from "./utils";
+import React = require('react');
+import { useCallback, useState } from 'react';
+import Row from '../Row';
+import { IDataRecord } from '../types';
+import { getGenerateValue, getInitialValue } from './utils';
 
 interface IAppProps {
   size?: number;
