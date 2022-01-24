@@ -1,6 +1,9 @@
+import React from "react";
 import { useCallback, useReducer } from "react";
+
 import Row from "../Row";
 import { IDataRecord } from "../types";
+
 import { UPDATE_ITEM_ACTION_TYPE } from "./consts";
 import { getGenerateValue, getInitialValue } from "./utils";
 

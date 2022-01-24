@@ -1,4 +1,5 @@
 import React, { useCallback, useRef } from "react";
+
 import { IDataRecord } from "../types";
 
 interface IProps {
