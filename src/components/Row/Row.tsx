@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import React, { useCallback, useRef } from "react";
 import { IDataRecord } from "../types";
 
 interface IProps {
@@ -7,19 +7,19 @@ interface IProps {
 }
 
 const Row: React.FC<IProps> = ({ data, onUpdate }) => {
-  const memoizeData = useMemo(() => data, [data]);
-  const { label, value, id } = memoizeData;
+  const renderCount = useRef(0);
 
-  let renderCount = 0;
+  const handleUpdate = useCallback(
+    () => onUpdate(data.id),
+    [data.id, onUpdate]
+  );
 
-  const handleUpdate = useCallback(() => onUpdate(id), [id, onUpdate]);
-
-  renderCount++;
+  renderCount.current++;
 
   return (
     <div>
-      <span className="label">{label}:</span>
-      <span>{value}</span> <span>({renderCount})</span>
+      <span className="label">{data.label}:</span>
+      <span>{data.value}</span> <span>({renderCount.current})</span>
       <button className="button" onClick={handleUpdate}>
         Update
       </button>
@@ -27,4 +27,4 @@ const Row: React.FC<IProps> = ({ data, onUpdate }) => {
   );
 };
 
-export default Row;
+export default React.memo(Row);
