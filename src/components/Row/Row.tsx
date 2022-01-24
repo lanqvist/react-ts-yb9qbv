@@ -1,4 +1,4 @@
-import React = require('react');
+import React from 'react';
 import { useCallback, useMemo } from 'react';
 import { IDataRecord } from '../types';
 

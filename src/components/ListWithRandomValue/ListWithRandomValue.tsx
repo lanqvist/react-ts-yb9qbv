@@ -1,4 +1,4 @@
-import React = require('react');
+import React from 'react';
 import { useCallback, useState } from 'react';
 import Row from '../Row';
 import { IDataRecord } from '../types';
